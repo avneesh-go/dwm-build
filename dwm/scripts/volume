@@ -1,0 +1,10 @@
+#!/bin/sh
+
+get_local_ip() {
+    ip -4 route get 1 | awk '{print $7}'
+}
+
+while true; do
+    echo "IP $(get_local_ip)"
+    sleep 1
+done
